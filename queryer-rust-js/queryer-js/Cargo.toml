@@ -1,0 +1,24 @@
+[package]
+name = "queryer-js"
+version = "0.1.0"
+license = "ISC"
+edition = "2018"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+queryer = { path = "../queryer" } # 引入 queryer
+tokio = { version = "1", features = ["full"] }
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-6"]
+
+[dependencies.pyo3] # 引入 pyo3
+version = "0.14"
+features = ["extension-module"]
